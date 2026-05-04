@@ -7,7 +7,7 @@ load_dotenv()
 
 def get_analysis_agent(df):
     api_key = os.getenv("API_KEY")
-    model = os.getenv("MODEL", "openrouter/auto") 
+    model = os.getenv("MODEL", "anthropic/claude-3.5-sonnet") 
     base_url = "https://openrouter.ai/api/v1"
 
     llm = ChatOpenAI(
@@ -15,7 +15,7 @@ def get_analysis_agent(df):
         openai_api_base=base_url,
         model_name=model,
         temperature=0,
-        max_tokens=1500,
+        max_tokens=2000,
         timeout=90,
         default_headers={
             "HTTP-Referer": "http://localhost:8501",
@@ -23,16 +23,17 @@ def get_analysis_agent(df):
         }
     )
 
-    PREFIX = """You are a Python expert. You are working with a pandas dataframe named `df`.
-    You MUST use the `python_repl_ast` tool for ANY calculations.
+# Измененная часть PREFIX в src/agent.py
+    PREFIX = """You are a Python expert and Data Scientist. You work with a pandas dataframe named `df`.
     
-    Step-by-step:
-    1. Look at `df.columns` to see what data you have.
-    2. Write and run code to get the answer.
-    3. Formulate the Final Answer in Russian.
+    RULES FOR GRAPHICS:
+    1. If the user asks for MULTIPLE charts or plots, use `plt.subplots()` to create a grid (e.g., 1x2 or 2x2) so ALL of them are visible in one image.
+    2. ALWAYS save the final result to 'temp_chart.png' using `plt.savefig('temp_chart.png', bbox_inches='tight')`.
+    3. Use `plt.close()` after saving.
+    4. Make sure titles and labels are clear.
     
-    If you get an error, fix your code and try again. 
-    Never ask the user for more data, it's already in the `df` variable."""
+    STRICT RULE: Use the `python_repl_ast` tool for ALL calculations and plotting.
+    Respond in Russian."""
 
     return create_pandas_dataframe_agent(
         llm, 
@@ -42,8 +43,6 @@ def get_analysis_agent(df):
         agent_type="zero-shot-react-description", 
         prefix=PREFIX,
         max_iterations=10,
-        max_execution_time=120,
-        early_stopping_method="generate",
         handle_parsing_errors=True
     )
 
