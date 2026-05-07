@@ -4,7 +4,6 @@
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.36%2B-FF4B4B?logo=streamlit&logoColor=white)
 ![LangChain](https://img.shields.io/badge/LangChain-agent-lightgrey?logo=chainlink&logoColor=white)
 ![OpenRouter](https://img.shields.io/badge/OpenRouter-API-6a4c93?logo=openai&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green)
 
 Веб-приложение для интерактивного анализа табличных данных с помощью LLM-агента. Загружаешь CSV или Excel-файл, задаёшь вопрос в чате — агент сам пишет Python-код, выполняет его на реальных данных и возвращает текстовый ответ или график.
 
