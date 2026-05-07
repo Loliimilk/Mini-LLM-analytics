@@ -7,3 +7,5 @@ langchain-experimental
 openai
 openpyxl
 tabulate
+matplotlib
+seaborn
