@@ -110,7 +110,7 @@ Mini-LLM-analytics/
 
 ```bash
 git clone https://github.com/Loliimilk/LocalAI-UI-Manager
-cd LocalAI-UI-Manager/Mini-LLM-analytics
+cd LocalAI-UI-Manager
 ```
 
 ### 2. (Опционально) Создать виртуальное окружение
