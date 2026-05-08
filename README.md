@@ -113,25 +113,13 @@ git clone https://github.com/Loliimilk/LocalAI-UI-Manager
 cd LocalAI-UI-Manager
 ```
 
-### 2. (Опционально) Создать виртуальное окружение
-
-```bash
-python -m venv venv
-
-# Windows
-venv\Scripts\activate
-
-# macOS / Linux
-source venv/bin/activate
-```
-
-### 3. Установить зависимости
+### 2. Установить зависимости
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Настроить переменные окружения
+### 3. Настроить переменные окружения
 
 ```bash
 cp .env.example .env
