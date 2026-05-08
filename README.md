@@ -109,7 +109,7 @@ Mini-LLM-analytics/
 ### 1. Клонировать репозиторий
 
 ```bash
-git clone https://github.com/Loliimilk/LocalAI-UI-Manager
+git clone https://github.com/Loliimilk/Mini-LLM-analytics
 cd LocalAI-UI-Manager
 ```
 
