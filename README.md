@@ -110,7 +110,7 @@ Mini-LLM-analytics/
 
 ```bash
 git clone https://github.com/Loliimilk/Mini-LLM-analytics
-cd LocalAI-UI-Manager
+cd Mini-LLM-analytics
 ```
 
 ### 2. Установить зависимости
