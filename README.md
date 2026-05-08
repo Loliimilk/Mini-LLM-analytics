@@ -136,8 +136,8 @@ cp .env.example .env
 | Переменная | Обязательная | Описание | Пример |
 |---|---|---|---|
 | `API_KEY` | ✅ | API-ключ для LLM-провайдера | `sk-or-v1-...` |
-| `MODEL` | ❌ | Название модели (по умолчанию `anthropic/claude-3.5-sonnet`) | `openai/gpt-4o` |
-| `API_URL` | ❌ | Base URL API (по умолчанию OpenRouter) | `https://openrouter.ai/api/v1` |
+| `MODEL` | ✅ | Название модели (по умолчанию `anthropic/claude-3.5-sonnet`) | `openai/gpt-4o` |
+| `API_URL` | ✅ | Base URL API (по умолчанию OpenRouter) | `https://openrouter.ai/api/v1` |
 
 Получить ключ OpenRouter: [openrouter.ai/keys](https://openrouter.ai/keys) — есть бесплатные модели.
 
