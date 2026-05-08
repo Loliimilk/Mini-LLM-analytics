@@ -99,6 +99,10 @@ def get_analysis_agent(dfs, df_names, user_context: str = ""):
     model = os.getenv("MODEL", "anthropic/claude-3.5-sonnet")
     base_url = os.getenv("API_URL", "https://openrouter.ai/api/v1")
 
+    # If the env provides a full request endpoint, keep only the base URL.
+    if base_url.endswith("/chat/completions"):
+        base_url = base_url[: -len("/chat/completions")]
+
     llm = ChatOpenAI(
         openai_api_key=api_key,
         openai_api_base=base_url,
